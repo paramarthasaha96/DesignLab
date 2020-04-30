@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private boolean verify() {
         if (TextUtils.isEmpty(email_edit_text.getText())) {
-            Toast.makeText(this, "Enter new email first", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Enter email", Toast.LENGTH_SHORT).show();
             return false;
         } else if (!Patterns.EMAIL_ADDRESS.matcher(email_edit_text.getText()).matches()) {
             Toast.makeText(this, "Invalid email", Toast.LENGTH_SHORT).show();
@@ -120,6 +120,5 @@ public class LoginActivity extends AppCompatActivity {
         };
         stringRequest.setRetryPolicy(new DefaultRetryPolicy(4000, 0, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         Volley.newRequestQueue(this).add(stringRequest);
-
     }
 }

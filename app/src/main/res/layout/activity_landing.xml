@@ -79,33 +79,34 @@
             android:weightSum="2">
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/loginSelect"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/password_text_input"
-                android:layout_marginTop="30dp"
-                android:text="Login"
-                android:backgroundTint="@color/green"
-                android:textColor="@color/white"
-                android:layout_weight="1"
                 android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginEnd="15dp"
-                />
+                android:layout_weight="1"
+                android:backgroundTint="@color/green"
+                android:text="Login"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/password_text_input" />
+
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/registerSelect"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/password_text_input"
-                android:layout_marginTop="30dp"
-                android:text="Register"
-                android:backgroundTint="@color/green"
-                android:textColor="@color/white"
-                android:layout_weight="1"
                 android:layout_marginStart="15dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginEnd="30dp"
-                />
+                android:layout_weight="1"
+                android:backgroundTint="@color/green"
+                android:text="Register"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/password_text_input" />
         </LinearLayout>
 
     </LinearLayout>
