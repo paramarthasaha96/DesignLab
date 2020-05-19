@@ -2,12 +2,12 @@ package com.techsquad;
 
 final class ServerURL {
     private static final String BASE_URL = "";
-    static final String LOGIN_URL = BASE_URL + "/";
-    static final String LOGOUT_URL = BASE_URL + "/";
-    static final String PHONE_CHECK_URL = BASE_URL + "/";
-    static final String VERIFY_TOKEN_URL = BASE_URL + "/";
+    static final String LOGIN_URL = BASE_URL + "/token/login";
+    static final String LOGOUT_URL = BASE_URL + "/token/remove";
+    static final String PHONE_CHECK_URL = BASE_URL + "/token/exists";
+    static final String VERIFY_TOKEN_URL = BASE_URL + "/token/verify";
     static final String REFRESH_TOKEN_URL = BASE_URL + "/";
-    static final String CUSTOMER_REGISTER_URL = BASE_URL + "/";
+    static final String CUSTOMER_REGISTER_URL = BASE_URL + "/api/register_cust";
 
     static final String SEARCH_URL = BASE_URL + "/";
     static final String DRIVER_BOOK_URL = BASE_URL + "/";

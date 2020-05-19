@@ -40,7 +40,6 @@ public class RegisterActivity extends AppCompatActivity {
     private TextInputEditText phone_edit_text;
     private TextInputEditText password_edit_text;
     private TextInputEditText repassword_edit_text;
-    private AppCompatButton register;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +51,7 @@ public class RegisterActivity extends AppCompatActivity {
         phone_edit_text = findViewById(R.id.phone_edit_text);
         password_edit_text = findViewById(R.id.password_edit_text);
         repassword_edit_text = findViewById(R.id.repassword_edit_text);
-        register = findViewById(R.id.register);
+        AppCompatButton register = findViewById(R.id.register);
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -135,7 +134,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<>();
-                params.put("name", name_edit_text.getText().toString());
+                params.put("fname", name_edit_text.getText().toString());
                 params.put("email", email_edit_text.getText().toString());
                 params.put("address", address_edit_text.getText().toString());
                 params.put("mobile", phone_edit_text.getText().toString());
