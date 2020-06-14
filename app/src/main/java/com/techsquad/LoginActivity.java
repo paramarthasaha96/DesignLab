@@ -131,6 +131,7 @@ public class LoginActivity extends AppCompatActivity {
                 try {
                     JSONObject userObj = new JSONObject(response);
                     List<HttpCookie> cookieList = manager.getCookieStore().getCookies();
+                    Log.e("cookie", cookieList.toString());
                     if (userObj.getInt("success") == 1) {
                         Toast.makeText(LoginActivity.this, "Logging in", Toast.LENGTH_SHORT).show();
                         User user = new User(userObj.getString("user_fname"), userObj.getString("user_lname"),

@@ -1,7 +1,7 @@
 package com.techsquad;
 
 final class ServerURL {
-    private static final String BASE_URL = "";
+    private static final String BASE_URL = "http://designlabstuff.pythonanywhere.com";
     static final String LOGIN_URL = BASE_URL + "/token/login";
     static final String LOGOUT_URL = BASE_URL + "/token/remove";
     static final String PHONE_CHECK_URL = BASE_URL + "/token/exists";

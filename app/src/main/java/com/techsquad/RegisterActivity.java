@@ -19,7 +19,6 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.textfield.TextInputEditText;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -100,16 +99,17 @@ public class RegisterActivity extends AppCompatActivity {
             public void onResponse(String response) {
                 Log.e("RegResponse", response);
                 try {
-                    JSONArray arr = new JSONArray(response);
-                    JSONObject result = arr.getJSONObject(0);
-                    int code = result.getInt("response");
+                    //JSONArray arr = new JSONArray(response);
+                    JSONObject result = new JSONObject(response);//arr.getJSONObject(0);
+                    int code = result.optInt("response", 0);
                     if (code == 0) {
                         Toast.makeText(RegisterActivity.this, "Registered successfully!", Toast.LENGTH_SHORT).show();
                         login();
                     } else {
-                        Toast.makeText(RegisterActivity.this, "Error registering", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this, "Already registered", Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException | NullPointerException e) {
+                    Log.e("Exception", e.toString());
                     Toast.makeText(RegisterActivity.this, "Error registering", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -121,6 +121,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String statusCode = String.valueOf(error.networkResponse.statusCode), body;
                 try {
                     body = new String(error.networkResponse.data, StandardCharsets.UTF_8);
+                    Log.e("ERR", body);
                     JSONObject jsonObject = new JSONObject(body);
                     if (jsonObject.getInt("success") == 0 && (statusCode.equals("400") || statusCode.equals("401")))
                         Toast.makeText(RegisterActivity.this, "Wrong phone no. or password\nError code " + statusCode, Toast.LENGTH_SHORT).show();
@@ -135,6 +136,7 @@ public class RegisterActivity extends AppCompatActivity {
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<>();
                 params.put("fname", name_edit_text.getText().toString());
+                params.put("lname", "");
                 params.put("email", email_edit_text.getText().toString());
                 params.put("address", address_edit_text.getText().toString());
                 params.put("mobile", phone_edit_text.getText().toString());
@@ -191,7 +193,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<>();
-                params.put("email", email_edit_text.getText().toString());
+                params.put("mobile", phone_edit_text.getText().toString());
                 params.put("pwd", password_edit_text.getText().toString());
                 params.put("remember", "true");
                 return params;
