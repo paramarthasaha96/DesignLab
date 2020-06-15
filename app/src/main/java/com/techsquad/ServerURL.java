@@ -9,9 +9,9 @@ final class ServerURL {
     static final String REFRESH_TOKEN_URL = BASE_URL + "/";
     static final String CUSTOMER_REGISTER_URL = BASE_URL + "/api/register_cust";
 
-    static final String SEARCH_URL = BASE_URL + "/";
-    static final String DRIVER_BOOK_URL = BASE_URL + "/";
-    static final String PAST_RIDES_URL = BASE_URL + "/";
+    static final String NEEDS_URL = BASE_URL + "/api/needs";
+    static final String DONATIONS_URL = BASE_URL + "/api/donations";
+    static final String DONATE_URL = BASE_URL + "/api/donate";
     static final String UPCOMING_RIDES_URL = BASE_URL + "/";
     static final String ONGOING_RIDE = BASE_URL + "/";
     static final String CUSTOMER_CANCEL_BOOKING_URL = BASE_URL + "/";
