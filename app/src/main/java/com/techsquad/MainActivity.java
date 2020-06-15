@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         }
         setContentView(R.layout.activity_dash);
         AppCompatButton start = findViewById(R.id.start);
+        AppCompatButton logout = findViewById(R.id.logout);
         final RadioGroup rg = findViewById(R.id.rg);
         start.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,6 +34,14 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(new Intent(MainActivity.this, NeedsActivity.class));
                 else
                     startActivity(new Intent(MainActivity.this, PledgeActivity.class));
+            }
+        });
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPrefManager.getInstance(MainActivity.this).logout();
+                finish();
+                startActivity(new Intent(MainActivity.this, LandingActivity.class));
             }
         });
     }
