@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:backgroundTint="@color/green"
+            android:backgroundTint="@color/red"
             android:text="Logout"
             android:textColor="@color/white" />
     </androidx.appcompat.widget.Toolbar>
@@ -57,10 +57,11 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="97dp"
                 android:layout_gravity="center"
                 android:layout_margin="30dp"
-                android:src="@drawable/ic_completed" />
+                android:src="@drawable/ic_vitamins"
+                app:srcCompat="@drawable/ic_vitamins" />
 
             <RadioGroup
                 android:id="@+id/rg"
@@ -75,7 +76,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
-                    android:text="View Pledge"
+                    android:text="Pledge Medicine"
                     android:textColor="@color/green"
                     android:textSize="23dp"
                     android:theme="@style/RadioButtonStyle" />
@@ -94,7 +95,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/start"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
                 android:backgroundTint="@color/green"
